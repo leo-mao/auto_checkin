@@ -27,10 +27,24 @@ class JegoTrip():
         # pprint.pprint(data)
         return data['result']
         
+    def verify_result(self):
+        tasks = self.task()
+        for task in tasks.get('日常任务', []):
+            if task.get('name') == '每日签到奖励':
+                return True if task.get('triggerAction') == '已签到' else False
 
-if __name__ == '__main__':
-    _user_id = os.environ['USERID']
+def main():
+    _user_id = os.getenv('USERID')
     cli = JegoTrip(_user_id)
     for task in cli.task().get('日常任务', []):
-        if task.get('name') == '每日签到奖励' and task.get('triggerAction') == '签到':
-            print('签到', "成功" if cli.sign(task['id']) else "失败！！！")
+        if task.get('name') == '每日签到奖励':
+            if task.get('triggerAction') == '签到':
+                result = cli.sign(task['id'])
+                if result:
+                    print('签到成功' if cli.verify_result() else '签到失败:未知')
+                    
+            elif task.get('triggerAction') == '已签到':
+                print("签到失败:今日已签到‼️")
+
+if __name__ == '__main__':
+    main()
