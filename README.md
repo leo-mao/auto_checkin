@@ -1,6 +1,6 @@
 # 无忧行自动签到获取无忧币
 
-今天签到![无忧行自动签到](https://github.com/leo-mao/auto_checkin/workflows/autocheckin/badge.svg)
+今天签到![无忧行自动签到](https://github.com/leo-mao/auto_checkin/workflows/%E6%97%A0%E5%BF%A7%E8%A1%8C%E7%AD%BE%E5%88%B0/badge.svg)
 
 ---
 ### 使用方法
