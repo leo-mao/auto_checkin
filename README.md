@@ -1,6 +1,8 @@
 # 无忧行自动签到获取无忧币
-今天签到状态![无忧行自动签到](https://github.com/leo-mao/auto_checkin/workflows/autocheckin/badge.svg)
 
+今天签到![无忧行自动签到](https://github.com/leo-mao/auto_checkin/workflows/autocheckin/badge.svg)
+
+---
 ### 使用方法
 1. 利用`stream app`通过mitm在`无忧行`手机客户端抓包，获取payload中的userid
 2. clone本项目
