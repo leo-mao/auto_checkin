@@ -15,15 +15,16 @@ jobs:
     environment: autocheckin-py3.9
     steps:
     
-    - name: Github Workflow initialization
+    - name: Checkout repository
       uses: actions/checkout@v2
+      
     - name: Cache pip modules
       uses: actions/cache@v2
       env:
-        cache-name: cache-pip-modules
-        with:
-          path: ~/.cache/pip
-          key: selfcheck.json
+        cache-name: selfcheck.json
+      with:
+        path: ~/.cache/pip
+        key: ${{ env.cache-name }}
 
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
