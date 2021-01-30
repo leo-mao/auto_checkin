@@ -12,7 +12,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    environment: autocheckin-py3.9
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -31,5 +31,7 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: jegotrip 无忧行签到
+      env:
+        USERID : ${{secrets.USERID}}
       run: |
         python jegotrip.py
