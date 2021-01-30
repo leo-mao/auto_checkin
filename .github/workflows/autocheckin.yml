@@ -14,7 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     environment: autocheckin-py3.9
     steps:
-    - uses: actions/checkout@v2
+    
+    - name: Github Workflow initialization
+      uses: actions/checkout@v2
+    - name: Cache pip modules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-pip-modules
+        with:
+          path: ~/.cache/pip
+          key: selfcheck.json
+
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
