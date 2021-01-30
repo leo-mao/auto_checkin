@@ -34,4 +34,3 @@ if __name__ == '__main__':
     for task in cli.task().get('日常任务', []):
         if task.get('name') == '每日签到奖励' and task.get('triggerAction') == '签到':
             print('签到', "成功" if cli.sign(task['id']) else "失败！！！")
-        
