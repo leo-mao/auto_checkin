@@ -5,7 +5,7 @@ name: 无忧行签到
 
 on:
   schedule:
-    - cron: "5 16 * * *"
+    - cron: "05 16 * * *"
   workflow_dispatch:
 
 jobs:
