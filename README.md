@@ -13,6 +13,7 @@
 > 手动测试本workflow可以通过 `Actions`->左侧标签栏中`autocheckin` -> 右侧窗口中`run wokrflow` -> `run workflow`，测试是否正确部署
  
  
- 参考: 
- https://github.com/fengjueming/jegotrip_autosign
-
+参考: 
+https://gist.github.com/isombyt/6570c116416654cf905b72c75c59c9b7
+https://github.com/fengjueming/jegotrip_autosign
+https://ooxx.be/js/jegotrip.js

@@ -17,14 +17,23 @@ class JegoTrip():
         resp = requests.post('http://task.jegotrip.com.cn:8080/app/sign', 
         json={
             'userid':self.user_id,
-            'taskid':task_id
+            'taskId':task_id    # 此处`I`要大写
         },
-        headers={'Content-Type':'application/json;charset=utf-8',
-        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 source/jegotrip'
+        headers={
+            'Accept-Encoding': 'gzip, deflate',
+            'Origin': 'http://task.jegotrip.com.cn:8080',
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json;charset=utf-8',
+            'Connection': 'close',
+            'Host': 'task.jegotrip.com.cn:8080',
+            'Content-Length': '89',
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 source/jegotrip',
+            'Accept-Language': 'en-us',
+            'Referer': 'http://task.jegotrip.com.cn:8080/task/index.html'
         })
         
         data = resp.json()
-        # pprint.pprint(data)
+        pprint.pprint(data)
         return data['result']
         
     def verify_result(self):
@@ -44,7 +53,7 @@ def main():
                     print('签到成功' if cli.verify_result() else '签到失败:未知')
                     
             elif task.get('triggerAction') == '已签到':
-                print("签到失败:今日已签到‼️")
+                print('签到失败:今日已签到‼️')
 
 if __name__ == '__main__':
     main()
