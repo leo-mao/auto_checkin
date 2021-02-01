@@ -12,7 +12,7 @@
 
 > 手动测试本workflow可以通过 `Actions`->左侧标签栏中`autocheckin` -> 右侧窗口中`run wokrflow` -> `run workflow`，脚步运行的输出会显示在`build`->`jegotrip 无忧行签到`一栏中，来测试是否正确部署，目前还不支持推送运行结果至外部
  
-参考: 
-https://gist.github.com/isombyt/6570c116416654cf905b72c75c59c9b7
-https://github.com/fengjueming/jegotrip_autosign
-https://ooxx.be/js/jegotrip.js
+参考:   
+https://gist.github.com/isombyt/6570c116416654cf905b72c75c59c9b7  
+https://github.com/fengjueming/jegotrip_autosign  
+https://ooxx.be/js/jegotrip.js  
